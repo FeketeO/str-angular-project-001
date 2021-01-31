@@ -97,7 +97,7 @@ bejárja a termékeket, pld:
 A Bootstrap keretrendszert és a FontAwesom ikonokat előre telepítettem és beállítottam. 
 - Írjatok egyéni scss állományokat igény szerint, alakítsátok a színeket és a megjelenést 
 a saját ízlésetek alapján. 
-- RESZPONZIVITÁS: mobil nézetben 1, tablet nézetben 2 és asztali nézetben 5 termék 
+- RESZPONZIVITÁSs: mobil nézetben 1, tablet nézetben 2 és asztali nézetben 5 termék 
 jelenjen meg egymás mellett. A menüt már megoldottam.
 - Termékek képei: a képeket az `app/assets` mappába helyezzétek el. Ez egy 
 speciális mappa, a webpack átmásolja a kész alkalmazásba. Ha mondjuk az 

@@ -1,0 +1,15 @@
+<!-- <form class="form-inline my-2 my-lg-0">
+ 
+  <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> -->
+<div class="row" *ngIf="kategoria1">
+  <div class="col-md-6 col-xl-2 " *ngFor="let product of kategoria1List | filter:phraseString">
+    <app-product-card [product]="product" [phraseString]="phrase"></app-product-card>
+  </div>
+</div>
+<div class="row" *ngIf="kategoria2">
+  <div class="col-md-6 col-xl-2" *ngFor="let product of kategoria2List | filter:phraseString:'name'">
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+</div>
