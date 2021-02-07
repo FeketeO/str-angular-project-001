@@ -1,9 +1,10 @@
 <h1>Kiemelt termékek</h1>
 <div class="row">
-  <app-product-flip [productK]="kiemelt"></app-product-flip>
+  <app-product-flip [productK]="products | async | featuredFilter:'featured'"></app-product-flip>
 </div>
 
-<h1 class="mt-5"> Vitaminok</h1>
+<h1 class="mt-5">{{category.name}}</h1>
+<h3>{{category.description}}</h3>
 
 <form class="form-inline my-2 my-lg-0">
 
@@ -11,4 +12,4 @@
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
-<app-product-list [kategoria1]="kategoria1List" [phraseString]="phrase"></app-product-list>
+<app-product-list [categoria]=1 [phraseString]="phrase"></app-product-list>
