@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
-import {FilterPipe} from 'src/app/pipe/filter.pipe';
+
 
 
 @Component({
@@ -13,15 +13,15 @@ import {FilterPipe} from 'src/app/pipe/filter.pipe';
 })
 export class DataEditorComponent implements OnInit {
 
-  
+
   productList$: Observable<Product[]> = this.productService.getAll();
   cols: ITableCol[] = this.config.tableCols;
 
-  // name: string = this.product$.list[]
 
 
 
-  @Input() onChane
+
+
   @Input() phrase : string;
 
 
@@ -46,8 +46,6 @@ export class DataEditorComponent implements OnInit {
     );
   }
 
-  // onPhrase(event: Event): void {
-  //   this.phrase = (event.target as HTMLInputElement).value;
-  // }
+
 
 }
