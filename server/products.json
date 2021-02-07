@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "id": 1,
+      "catId": 2,
+      "name": "hgadie0",
+      "description": "amet imperdiet et commodo vulputate justo in blandit ultrices enim",
+      "image": "../assets/img/ca188x204.jpg",
+      "price": 8528,
+      "stock": 17,
+      "featured": true,
+      "active": true
+    },
+    {
       "id": 2,
       "catId": 2,
       "name": "scolcutt1",
@@ -12,9 +23,20 @@
       "active": false
     },
     {
+      "id": 3,
+      "catId": 1,
+      "name": "pmereweather2",
+      "description": "sapien a sequat ntesque ultrices mattis odio donec vitae nisi nam ultrices",
+      "image": "../assets/img/kalium188x204.jpg",
+      "price": 4292,
+      "stock": 25,
+      "featured": true,
+      "active": true
+    },
+    {
       "id": 4,
       "catId": 1,
-      "name": "sgilluley3",
+      "name": "sgiley3",
       "description": "eget tempus ndisse ornare consequat lectus in est risus auctor sed tristique",
       "image": "../assets/img/kalium188x204.jpg",
       "price": 6038,
@@ -34,6 +56,28 @@
       "active": false
     },
     {
+      "id": 6,
+      "catId": 2,
+      "name": "jmaccrea5",
+      "description": "odio condimentumet tempus semper est quam pharetra magna ac consequat metusen",
+      "image": "../assets/img/ca188x204.jpg",
+      "price": 9887,
+      "stock": 29,
+      "featured": false,
+      "active": true
+    },
+    {
+      "id": 7,
+      "catId": 2,
+      "name": "kcrandon6",
+      "description": "ante vivamus r get eleifend luctus ultricies eu nibh quisque id justo sit amet",
+      "image": "../assets/img/ca188x204.jpg",
+      "price": 1375,
+      "stock": 25,
+      "featured": true,
+      "active": true
+    },
+    {
       "id": 8,
       "catId": 1,
       "name": "colennachain7",
@@ -47,8 +91,8 @@
     {
       "id": 9,
       "catId": 1,
-      "name": "macska",
-      "description": "nasa venenatis attpat in congue etiam justo etiam pretium iaculis justoitasse",
+      "name": "bwhordley8",
+      "description": "nisi venenatis attpat in congue etiam justo etiam pretium iaculis justoitasse",
       "image": "../assets/img/kalium188x204.jpg",
       "price": 9225,
       "stock": 11,
@@ -87,6 +131,17 @@
       "stock": 31,
       "featured": false,
       "active": true
+    },
+    {
+      "id": 13,
+      "catId": 2,
+      "name": "shornungc",
+      "description": "fusce lacus purus us suspendisse potenti in eleifend  odio in hac habitasse umst",
+      "image": "../assets/img/kalium188x204.jpg",
+      "price": 8251,
+      "stock": 5,
+      "featured": false,
+      "active": false
     },
     {
       "id": 14,
@@ -243,17 +298,6 @@
       "active": false
     },
     {
-      "id": 28,
-      "catId": 2,
-      "name": "dsneydr",
-      "description": "justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas ",
-      "image": "../assets/img/kalium188x204.jpg",
-      "price": 4069,
-      "stock": 29,
-      "featured": false,
-      "active": true
-    },
-    {
       "id": 29,
       "catId": 2,
       "name": "kbeevorss",
@@ -395,17 +439,6 @@
       "stock": 25,
       "featured": true,
       "active": false
-    },
-    {
-      "id": 43,
-      "catId": 1,
-      "name": "wzaniolo16",
-      "description": "accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque",
-      "image": "../assets/img/krom188x204.jpg",
-      "price": 7855,
-      "stock": 23,
-      "featured": false,
-      "active": true
     },
     {
       "id": 44,
