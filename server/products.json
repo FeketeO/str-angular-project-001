@@ -441,17 +441,6 @@
       "active": false
     },
     {
-      "id": 43,
-      "catId": 1,
-      "name": "wzaniolo16",
-      "description": "accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque",
-      "image": "../assets/img/krom188x204.jpg",
-      "price": 7855,
-      "stock": 23,
-      "featured": false,
-      "active": true
-    },
-    {
       "id": 44,
       "catId": 2,
       "name": "stipper17",
