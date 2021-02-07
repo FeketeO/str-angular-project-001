@@ -1,5 +1,5 @@
 <h1>Kiemelt termékek</h1>
-<div class="kiem my-5">
+<div class="kiem ">
 
 
     <app-product-flip [productK]="productList$ | async | featuredFilter:'featured' | slice:0:5"></app-product-flip>
@@ -7,6 +7,6 @@
 
 
 
-<h1 class="my-5 py-2">Akciós termékek</h1>
+<h1 class="">Akciós termékek</h1>
 
 <app-product-flip [productA]="productList$ | async | featuredFilter:'active' | slice:0:5"></app-product-flip>

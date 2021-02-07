@@ -1,10 +1,10 @@
 <div class="row" *ngIf="productK">
-    <div class="col-md-6 col-xl-2" *ngFor="let product of productList$ | async | featuredFilter:'featured'">
+    <div class="col-md-6 col-xl-2 mx-auto" *ngFor="let product of productList$ | async | featuredFilter:'featured'">
         <app-product-card [product]="product"></app-product-card>
     </div>
 </div>
 <div class="row" *ngIf="productA">
-    <div class="col-md-6 col-xl-2" *ngFor="let product of productList$ | async | featuredFilter:'active'">
+    <div class="col-md-6 col-xl-2 mx-auto" *ngFor="let product of productList$ | async | featuredFilter:'active'">
         <app-product-card [product]="product"></app-product-card>
     </div>
 </div>
