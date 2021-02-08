@@ -16,6 +16,7 @@ import { HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { FeaturedFilterPipe } from './pipe/featured-filter.pipe';
 import { AdminComponent } from './page/admin/admin.component';
+import { PagerPipe } from './pipe/pager.pipe';
 import { SorterPipe } from './pipe/sorter.pipe'
 
 @NgModule({
@@ -32,6 +33,9 @@ import { SorterPipe } from './pipe/sorter.pipe'
     DataEditorComponent,
     FeaturedFilterPipe,
     AdminComponent,
+
+    PagerPipe,
+
     SorterPipe
   ],
   imports: [

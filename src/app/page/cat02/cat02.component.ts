@@ -4,6 +4,7 @@ import { Category } from 'src/app/model/category';
 import { Product } from '../../model/product';
 import { ProductService } from '../../service/product-service';
 import { CategoryService } from 'src/app/service/category.service';
+import { map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cat02',
@@ -13,7 +14,8 @@ import { CategoryService } from 'src/app/service/category.service';
 export class Cat02Component implements OnInit {
 
   phrase:string='';
-  products: Observable<Product[]> = this.productService.getAll();
+  products: Observable<Product[]> = this.productService.getAll().pipe(
+    map(products=>products.filter(Product=>Product.catId===2)));
   category: Category = this.categoryService.list[1];
   
   constructor(
