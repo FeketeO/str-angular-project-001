@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
+import { SorterPipe } from '../../pipe/sorter.pipe';
+
 
 
 
@@ -18,7 +20,7 @@ export class DataEditorComponent implements OnInit {
   cols: ITableCol[] = this.config.tableCols;
 
 
-
+columnKey:string='';
 
 
 
@@ -45,6 +47,12 @@ export class DataEditorComponent implements OnInit {
       () => location.reload()
     );
   }
+
+
+
+onColumnSelect(key:string):void{
+  this.columnKey=key;
+}
 
 
 

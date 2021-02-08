@@ -15,7 +15,8 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
 import { HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { FeaturedFilterPipe } from './pipe/featured-filter.pipe';
-import { AdminComponent } from './page/admin/admin.component'
+import { AdminComponent } from './page/admin/admin.component';
+import { SorterPipe } from './pipe/sorter.pipe'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminComponent } from './page/admin/admin.component'
     ProductCardComponent,
     DataEditorComponent,
     FeaturedFilterPipe,
-    AdminComponent
+    AdminComponent,
+    SorterPipe
   ],
   imports: [
     BrowserModule,
