@@ -53,11 +53,11 @@
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
-          <li (click)="active(1)" [class.actived]="active" class="page-item active"><a class="page-link">1</a></li>
-          <li (click)="active(2)" [class.actived]="active" class="page-item"><a class="page-link">2</a></li>
-          <li (click)="active(3)" [class.actived]="active" class="page-item"><a class="page-link">3</a></li>
-          <li (click)="active(4)" [class.actived]="active" class="page-item"><a class="page-link">4</a></li>
-          <li (click)="active(5)" [class.actived]="active" class="page-item"><a class="page-link">5</a></li>
+          <li (click)="active(1)" [ngClass]="{active: isActive1 }" class="page-item active"><a class="page-link">1</a></li>
+          <li (click)="active(2)" [ngClass]="{active: isActive2 }" class="page-item"><a class="page-link">2</a></li>
+          <li (click)="active(3)" [ngClass]="{active: isActive3 }" class="page-item"><a class="page-link">3</a></li>
+          <li (click)="active(4)" [ngClass]="{ active: isActive4 }" class="page-item"><a class="page-link">4</a></li>
+          <li (click)="active(5)" [ngClass]="{ active: isActive5 }" class="page-item"><a class="page-link">5</a></li>
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
