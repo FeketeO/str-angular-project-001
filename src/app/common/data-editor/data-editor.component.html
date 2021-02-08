@@ -20,9 +20,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-
-          
+        <tbody>          
             <tr *ngFor="let product of productList$ | async | filter:phrase | pager:page">
               <td *ngFor="let col of cols">
                 <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">

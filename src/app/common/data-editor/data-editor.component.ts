@@ -16,12 +16,7 @@ export class DataEditorComponent implements OnInit {
   filterKey: string = 'name';
   filterKeys: string[] = Object.keys(new Product());
   page: number = 1;
-  actived1: boolean =true;
-  actived2: boolean = false;
-  actived3: boolean= false;
-  actived4: boolean= false;
-  actived5: boolean= false;
-
+  
   constructor(
     private productService: ProductService,
     private config: ConfigService,
@@ -45,8 +40,7 @@ export class DataEditorComponent implements OnInit {
   }
 
   active(pageIn: number) {
-    this.page = pageIn;
-    
+    this.page = pageIn;   
     
     }
 }
