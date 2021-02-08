@@ -24,11 +24,16 @@ export class DataEditorComponent implements OnInit {
 
   columnKey:string='';
 
+isActive1: boolean = true;
+  isActive2: boolean = false;
+  isActive3: boolean = false;
+  isActive4: boolean = false;
+  isActive5: boolean = false;
 
 
 
 
-  @Input() phrase : string;
+  //@Input() phrase : string;
 
 
   constructor(
@@ -52,8 +57,7 @@ export class DataEditorComponent implements OnInit {
      // () => console.log('deleted')
     );
   }
-  onColumnSelect(key:string):void{
-  this.columnKey=key;}
+  
 
 
 active(pageIn: number) {
@@ -66,7 +70,6 @@ active(pageIn: number) {
       this.isActive4 = false;
       this.isActive5 = false;
     } else if (pageIn==2){
-
 
       this.isActive1 = false;
       this.isActive2 = true;
