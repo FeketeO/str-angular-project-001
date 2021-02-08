@@ -4,6 +4,9 @@ import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { SorterPipe } from '../../pipe/sorter.pipe';
+import { PagerPipe } from '../../pipe/pager.pipe';
+
+
 
 
 @Component({
@@ -19,14 +22,21 @@ export class DataEditorComponent implements OnInit {
   filterKeys: string[] = Object.keys(new Product());
   page: number = 1;
 
-  isActive1: boolean = true;
+
+
+  columnKey:string='';
+
+isActive1: boolean = true;
   isActive2: boolean = false;
   isActive3: boolean = false;
   isActive4: boolean = false;
   isActive5: boolean = false;
 
-  columnKey:string='';
-  
+
+
+ // @Input() phrase: string;
+
+
   constructor(
     private productService: ProductService,
     private config: ConfigService,
@@ -91,7 +101,10 @@ active(pageIn: number) {
       this.isActive5 = true;
     } 
     }
-  
+
+
+
+
 
 
 }
