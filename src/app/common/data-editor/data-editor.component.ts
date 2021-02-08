@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
+import { SorterPipe } from '../../pipe/sorter.pipe';
+
 
 @Component({
   selector: 'app-data-editor',
