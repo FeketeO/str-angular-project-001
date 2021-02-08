@@ -6,6 +6,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { SorterPipe } from '../../pipe/sorter.pipe';
 
 
+
 @Component({
   selector: 'app-data-editor',
   templateUrl: './data-editor.component.html',
@@ -22,7 +23,14 @@ export class DataEditorComponent implements OnInit {
 
 
   columnKey:string='';
-  
+
+
+
+
+
+  @Input() phrase : string;
+
+
   constructor(
     private productService: ProductService,
     private config: ConfigService,
@@ -89,6 +97,12 @@ active(pageIn: number) {
     } 
     }
   
+
+
+onColumnSelect(key:string):void{
+  this.columnKey=key;
+}
+
 
 
 }

@@ -8,6 +8,9 @@
       </select> -->
     </div>
     <div class="col-4 mt-3 mb-3">
+
+    <div class="col-4 offset-8 mb-3">
+
       <input [(ngModel)]="phrase" class="form-control mr-sm-2" type="text" placeholder="Search">
     </div>
   </div>
@@ -17,11 +20,16 @@
         <thead>
           <tr>
             <th *ngFor="let col of cols" (click)="onColumnSelect(col.key)">{{ col.text }}</th>
+
             <th></th>
           </tr>
         </thead>
         <tbody>
+
           <tr *ngFor="let product of productList$ | async | filter:'name':phrase | pager:page | sorter:columnKey">
+
+          <tr *ngFor="let product of productList$ | async | filter:phrase | sorter:columnKey ">
+
             <td *ngFor="let col of cols">
               <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
               <span *ngIf="!col.editable">{{ product[col.key] }}</span>
@@ -44,6 +52,7 @@
       </table>
     </div>
   </div>
+
   <div class="row">
     <div class="offset-4">
       <nav aria-label="Page navigation example">
@@ -68,4 +77,5 @@
       </nav>
     </div>
   </div>
+
 </div>
