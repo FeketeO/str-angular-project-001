@@ -1,10 +1,8 @@
-import { Component, Input, OnInit, Pipe } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
-
-
 
 @Component({
   selector: 'app-data-editor',
@@ -12,40 +10,37 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
   styleUrls: ['./data-editor.component.scss']
 })
 export class DataEditorComponent implements OnInit {
-
-
   productList$: Observable<Product[]> = this.productService.getAll();
   cols: ITableCol[] = this.config.tableCols;
-
-
-
-
-
-
-  @Input() phrase : string;
-
-
+  phrase: string = '';
+  filterKey: string = 'name';
+  filterKeys: string[] = Object.keys(new Product());
+  page: number = 1;
+  
   constructor(
     private productService: ProductService,
     private config: ConfigService,
-
   ) { }
 
   ngOnInit(): void {
   }
 
-  onUpdate(product: Product) : void {
+  onUpdate(product: Product): void {
     this.productService.update(product).subscribe(
-      () => location.reload()
+      //() => location.reload()
+      updatedUser => console.log(updatedUser)
     );
   }
 
-  onDelete(product: Product) : void {
+  onDelete(product: Product): void {
     this.productService.remove(product).subscribe(
-      () => location.reload()
+      //() => location.reload()
+      () => console.log('deleted')
     );
   }
 
-
-
+  active(pageIn: number) {
+    this.page = pageIn;   
+    
+    }
 }
