@@ -37,15 +37,15 @@ export class DataEditorComponent implements OnInit {
 
   onUpdate(product: Product): void {
     this.productService.update(product).subscribe(
-      //() => location.reload()
-      updatedUser => console.log(updatedUser)
+      () => location.reload()
+     // updatedUser => console.log(updatedUser)
     );
   }
 
   onDelete(product: Product): void {
     this.productService.remove(product).subscribe(
-      //() => location.reload()
-      () => console.log('deleted')
+      () => location.reload()
+     // () => console.log('deleted')
     );
   }
   onColumnSelect(key:string):void{
