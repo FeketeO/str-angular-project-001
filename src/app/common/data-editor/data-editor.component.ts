@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
+import { SorterPipe } from '../../pipe/sorter.pipe';
+
 
 @Component({
   selector: 'app-data-editor',
@@ -16,11 +18,10 @@ export class DataEditorComponent implements OnInit {
   filterKey: string = 'name';
   filterKeys: string[] = Object.keys(new Product());
   page: number = 1;
-  isActive1: boolean = true;
-  isActive2: boolean = false;
-  isActive3: boolean = false;
-  isActive4: boolean = false;
-  isActive5: boolean = false;
+
+
+
+  columnKey:string='';
   
   constructor(
     private productService: ProductService,
@@ -32,19 +33,22 @@ export class DataEditorComponent implements OnInit {
 
   onUpdate(product: Product): void {
     this.productService.update(product).subscribe(
-      //() => location.reload()
-      updatedUser => console.log(updatedUser)
+      () => location.reload()
+     // updatedUser => console.log(updatedUser)
     );
   }
 
   onDelete(product: Product): void {
     this.productService.remove(product).subscribe(
-      //() => location.reload()
-      () => console.log('deleted')
+      () => location.reload()
+     // () => console.log('deleted')
     );
   }
+  onColumnSelect(key:string):void{
+  this.columnKey=key;}
 
-  active(pageIn: number) {
+
+active(pageIn: number) {
     this.page = pageIn;  
     if(pageIn==1){
 
@@ -54,6 +58,7 @@ export class DataEditorComponent implements OnInit {
       this.isActive4 = false;
       this.isActive5 = false;
     } else if (pageIn==2){
+
 
       this.isActive1 = false;
       this.isActive2 = true;
@@ -83,4 +88,7 @@ export class DataEditorComponent implements OnInit {
       this.isActive5 = true;
     } 
     }
+  
+
+
 }
