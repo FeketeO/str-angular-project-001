@@ -4,6 +4,8 @@ import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { SorterPipe } from '../../pipe/sorter.pipe';
+import { PagerPipe } from '../../pipe/pager.pipe';
+
 
 
 
@@ -32,8 +34,7 @@ isActive1: boolean = true;
 
 
 
-
-  //@Input() phrase : string;
+ // @Input() phrase: string;
 
 
   constructor(
@@ -57,7 +58,8 @@ isActive1: boolean = true;
      // () => console.log('deleted')
     );
   }
-  
+  onColumnSelect(key:string):void{
+  this.columnKey=key;}
 
 
 active(pageIn: number) {
@@ -99,12 +101,9 @@ active(pageIn: number) {
       this.isActive5 = true;
     } 
     }
-  
 
 
-onColumnSelect(key:string):void{
-  this.columnKey=key;
-}
+
 
 
 
