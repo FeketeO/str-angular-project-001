@@ -1,6 +1,6 @@
 <h1>Kiemelt termékek</h1>
 <div class="row">
-    <app-product-flip [productK]="products | async | featuredFilter:'featured'"></app-product-flip>
+    <app-product-flip [cat]=2 [productK]="products | async | featuredFilter:'featured'"></app-product-flip>
 </div>
 
 <h1 class="mt-5">{{category.name}}</h1>
