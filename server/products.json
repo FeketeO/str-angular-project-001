@@ -23,17 +23,6 @@
       "active": false
     },
     {
-      "id": 3,
-      "catId": 1,
-      "name": "pmereweather2",
-      "description": "sapien a sequat ntesque ultrices mattis odio donec vitae nisi nam ultrices",
-      "image": "../assets/img/kalium188x204.jpg",
-      "price": 4292,
-      "stock": 25,
-      "featured": true,
-      "active": true
-    },
-    {
       "id": 4,
       "catId": 1,
       "name": "sgiley3",
