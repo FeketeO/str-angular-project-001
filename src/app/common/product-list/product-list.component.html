@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-lg-3 "
-    *ngFor="let product of productList$ | async | filter:phraseString:'name'  | filter:categoria:'catId'">
+    *ngFor="let product of productList$ | async | filter:'name':phraseString | filter:'catId':categoria">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>
