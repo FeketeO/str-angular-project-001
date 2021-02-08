@@ -6,6 +6,10 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { SorterPipe } from '../../pipe/sorter.pipe';
 import { PagerPipe } from '../../pipe/pager.pipe';
 
+import { CategoryService } from '../../service/category.service';
+import {map, tap} from 'rxjs/operators';
+
+
 
 
 
@@ -18,8 +22,12 @@ export class DataEditorComponent implements OnInit {
   productList$: Observable<Product[]> = this.productService.getAll();
   cols: ITableCol[] = this.config.tableCols;
   phrase: string = '';
+
   filterKey: string = 'name';
   filterKeys: string[] = Object.keys(new Product());
+
+
+
   page: number = 1;
 
 
@@ -40,6 +48,7 @@ isActive1: boolean = true;
   constructor(
     private productService: ProductService,
     private config: ConfigService,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
