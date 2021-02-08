@@ -16,6 +16,8 @@ export class DataEditorComponent implements OnInit {
   filterKey: string = 'name';
   filterKeys: string[] = Object.keys(new Product());
   page: number = 1;
+
+  columnKey:string='';
   
   constructor(
     private productService: ProductService,
@@ -43,4 +45,9 @@ export class DataEditorComponent implements OnInit {
     this.page = pageIn;   
     
     }
+
+    onColumnSelect(key:string):void{
+  this.columnKey=key;
+}
+
 }
