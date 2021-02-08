@@ -1,9 +1,14 @@
-
 <div class="container">
-
   <div class="row">
-    <div class="col-4 offset-8 mb-3">
-        <input [(ngModel)]="phrase" class="form-control mr-sm-2" type="text" placeholder="Search">
+    <div class="col-3 offset-5 mt-3 mb-3">
+      <!-- <select [(ngModel)]="filterKey" class="from-control">
+        <option *ngFor="let key of filterKeys" value="key">
+          {{ key }}
+        </option>
+      </select> -->
+    </div>
+    <div class="col-4 mt-3 mb-3">
+      <input [(ngModel)]="phrase" class="form-control mr-sm-2" type="text" placeholder="Search">
     </div>
   </div>
   <div class="row">
@@ -16,32 +21,50 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of productList$ | async | filter:phrase">
-            <td *ngFor="let col of cols">
-              <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
-              <span *ngIf="!col.editable">{{ product[col.key] }}</span>
-            </td>
-            <td>
-              <div class="btn-group">
-                <button (click)="onUpdate(product)" class="btn btn-info">
-                  <i class="fa fa-refresh"></i>
-                </button>
 
-
-
-                <button (click)="onDelete(product)" class="btn btn-danger">
-                  <i class="fa fa-trash"></i>
-                </button>
-
-                <button (click)="onUpdate(product)" class="btn btn-success">
-                  <i class="fa fa-user"></i>
-                </button>
-
-              </div>
-            </td>
-          </tr>
-        </tbody>
+          
+            <tr *ngFor="let product of productList$ | async | filter:phrase | pager:page">
+              <td *ngFor="let col of cols">
+                <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
+                <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button (click)="onUpdate(product)" class="btn btn-info">
+                    <i class="fa fa-refresh"></i>
+                  </button>
+                  <button (click)="onDelete(product)" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button (click)="onUpdate(product)" class="btn btn-success">
+                    <i class="fa fa-user"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+             </tbody>
       </table>
     </div>
+  </div>
+  <div class="row">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li (click)="active(1)" [class.actived]="active" class="page-item active"><a class="page-link">1</a></li>
+        <li (click)="active(2)" [class.actived]="active" class="page-item"><a class="page-link">2</a></li>
+        <li (click)="active(3)" [class.actived]="active" class="page-item"><a class="page-link">3</a></li>
+        <li (click)="active(4)" [class.actived]="active" class="page-item"><a class="page-link">4</a></li>
+        <li (click)="active(5)" [class.actived]="active" class="page-item"><a class="page-link">5</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
