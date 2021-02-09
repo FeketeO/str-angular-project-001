@@ -1,70 +1,84 @@
 <div class="container">
   <div class="row">
+
+
+
     <div class="col-3 offset-5 mt-3 mb-3">
-      <!-- <select [(ngModel)]="filterKey" class="from-control">
-        <option *ngFor="let key of filterKeys" value="key">
+      <select [(ngModel)]="filterKey" class="form-control">
+        <option *ngFor="let key of filterKeys" [value]="key">
           {{ key }}
         </option>
-      </select> -->
+      </select>
     </div>
+
     <div class="col-4 mt-3 mb-3">
+
       <input [(ngModel)]="phrase" class="form-control mr-sm-2" type="text" placeholder="Search">
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th *ngFor="let col of cols">{{ col.text }}</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of productList$ | async | filter:phrase | pager:page">
-            <td *ngFor="let col of cols">
-              <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
-              <span *ngIf="!col.editable">{{ product[col.key] }}</span>
-            </td>
-            <td>
-              <div class="btn-group">
-                <button (click)="onUpdate(product)" class="btn btn-info">
-                  <i class="fa fa-refresh"></i>
-                </button>
-                <button (click)="onDelete(product)" class="btn btn-danger">
-                  <i class="fa fa-trash"></i>
-                </button>
-                <button (click)="onUpdate(product)" class="btn btn-success">
-                  <i class="fa fa-user"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th *ngFor="let col of cols" (click)="onColumnSelect(col.key)">{{ col.text }}</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            <tr *ngFor="let product of productList$ | async | filter:filterKey:phrase | pager:page | sorter:columnKey">
+
+
+
+              <td *ngFor="let col of cols">
+                <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
+                <span *ngIf="!col.editable">{{ product[col.key] }}</span>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button (click)="onUpdate(product)" class="btn btn-info">
+                    <i class="fa fa-refresh"></i>
+                  </button>
+                  <button (click)="onDelete(product)" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button (click)="onUpdate(product)" class="btn btn-success">
+                    <i class="fa fa-user"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="offset-4">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li (click)="active(1)" [ngClass]="{active: isActive1 }" class="page-item active"><a class="page-link">1</a></li>
-          <li (click)="active(2)" [ngClass]="{active: isActive2 }" class="page-item"><a class="page-link">2</a></li>
-          <li (click)="active(3)" [ngClass]="{active: isActive3 }" class="page-item"><a class="page-link">3</a></li>
-          <li (click)="active(4)" [ngClass]="{ active: isActive4 }" class="page-item"><a class="page-link">4</a></li>
-          <li (click)="active(5)" [ngClass]="{ active: isActive5 }" class="page-item"><a class="page-link">5</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+
+    <div class="row">
+      <div class="offset-4">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+
+            <li (click)="active(1)" [ngClass]="{active: isActive1 }" class="page-item active"><a class="page-link">1</a>
+            </li>
+            <li (click)="active(2)" [ngClass]="{active: isActive2 }" class="page-item"><a class="page-link">2</a></li>
+            <li (click)="active(3)" [ngClass]="{active: isActive3 }" class="page-item"><a class="page-link">3</a></li>
+            <li (click)="active(4)" [ngClass]="{ active: isActive4 }" class="page-item"><a class="page-link">4</a></li>
+            <li (click)="active(5)" [ngClass]="{ active: isActive5 }" class="page-item"><a class="page-link">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
+
   </div>
-</div>
