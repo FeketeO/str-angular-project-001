@@ -10,7 +10,7 @@ export interface ITableCol {
   key: string;
   text: string;
   editable?: boolean;
-}
+  }
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class ConfigService {
   ];
 
   tableCols: ITableCol[] = [
-    {key: 'id', text: 'ID', editable: false},
+    {key: 'id', text: 'ID',  editable: false},
     {key: 'catId', text: 'CatID', editable: true},
     {key: 'name', text: 'name', editable: true},
     {key: 'description', text: 'description', editable: true},
