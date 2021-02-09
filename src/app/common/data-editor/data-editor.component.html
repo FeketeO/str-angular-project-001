@@ -29,9 +29,7 @@
           <tbody>
 
 
-            <tr *ngFor="let product of productList$ | async | filter:filterKey:phrase | pager:page | sorter:columnKey">
-
-
+            <tr *ngFor="let product of productList$ | async | filter:filterKey:phrase | pager:page:numberKey | sorter:columnKey">
 
               <td *ngFor="let col of cols">
                 <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
@@ -57,11 +55,21 @@
     </div>
 
     <div class="row">
-      <div class="offset-4">
+      <div class="col-4">
+        <select [(ngModel)]="numberKey" name="numbersOfRows" id="numbersOfRows" class="from-control">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+
+      </div>
+      <div class="col-4">
         <nav aria-label="Page navigation example">
           <ul class="pagination">
             <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
+              <a class="page-link" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
 
@@ -72,7 +80,7 @@
             <li (click)="active(4)" [ngClass]="{ active: isActive4 }" class="page-item"><a class="page-link">4</a></li>
             <li (click)="active(5)" [ngClass]="{ active: isActive5 }" class="page-item"><a class="page-link">5</a></li>
             <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
+              <a class="page-link" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
