@@ -4,6 +4,13 @@ import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product-service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { SorterPipe } from '../../pipe/sorter.pipe';
+import { PagerPipe } from '../../pipe/pager.pipe';
+
+import { CategoryService } from '../../service/category.service';
+import {map, tap} from 'rxjs/operators';
+
+
+
 
 
 @Component({
@@ -15,17 +22,33 @@ export class DataEditorComponent implements OnInit {
   productList$: Observable<Product[]> = this.productService.getAll();
   cols: ITableCol[] = this.config.tableCols;
   phrase: string = '';
+
   filterKey: string = 'name';
   filterKeys: string[] = Object.keys(new Product());
+
+
+
   page: number = 1;
 
 
 
   columnKey:string='';
-  
+
+isActive1: boolean = true;
+  isActive2: boolean = false;
+  isActive3: boolean = false;
+  isActive4: boolean = false;
+  isActive5: boolean = false;
+
+
+
+ // @Input() phrase: string;
+
+
   constructor(
     private productService: ProductService,
     private config: ConfigService,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
@@ -59,7 +82,6 @@ active(pageIn: number) {
       this.isActive5 = false;
     } else if (pageIn==2){
 
-
       this.isActive1 = false;
       this.isActive2 = true;
       this.isActive3 = false;
@@ -88,7 +110,10 @@ active(pageIn: number) {
       this.isActive5 = true;
     } 
     }
-  
+
+
+
+
 
 
 }

@@ -33,7 +33,9 @@ import { SorterPipe } from './pipe/sorter.pipe'
     DataEditorComponent,
     FeaturedFilterPipe,
     AdminComponent,
+
     PagerPipe,
+
     SorterPipe
   ],
   imports: [
