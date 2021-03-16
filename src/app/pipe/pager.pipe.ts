@@ -8,7 +8,7 @@ export class PagerPipe implements PipeTransform {
   start: number;
   end: number;
   transform(value: any[], page: number): any[] {
-    this.start = page * 10-9;
+    this.start = page * 10-10;
     this.end = page *10;
     if (!Array.isArray(value) || !page) {
       return value;
